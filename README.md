@@ -4,39 +4,6 @@
 >
 > — Prof. NOTA
 
----
-
----
-
-## Maintenance by Prof. NOTA Evergreen Standard
-
-This repo is intended to stay evergreen while remaining production-safe.
-
-### Current Baseline (Jan 2026)
-
-- Runtime: Node **24.x** (Vercel-compatible; see `.nvmrc` and `package.json#engines`)
-- Package manager: Yarn **4.12.0** (lockfile: `yarn.lock`)
-- Types: `@types/node` **24.10.7** (pinned to match Node 24; 25.x intentionally deferred)
-- Key packages: Next.js **16.1.4**, React **19.2.3**, thirdweb **5.118.0**, framer-motion **12.29.0**
-- Deploy target: **Vercel auto-deploy from `main`**
-
-### Monthly Evergreen Cycle (safe)
-
-- `yarn install`
-- `yarn up -R "*"`
-- `yarn npm audit --severity moderate`
-- `yarn lint`
-- `yarn build`
-
-### Quarterly Evergreen Cycle (major review)
-
-- Review majors one at a time (framework/tooling), with a dedicated PR.
-- If `@types/node` gets bumped, repin to **24.10.7**, then re-run audit/lint/build.
-
----
-
----
-
 ## Staging 2.4.66 by TravelConnect
 
 Link #1: [coupon.travelconnect.co](https://coupon.travelconnect.co/) [![status](https://img.shields.io/badge/deploy-live-brightgreen)](https://coupon.travelconnect.co/)  
@@ -55,6 +22,30 @@ yarn install && yarn dev
 > — Prof. NOTA
 
 ---
+
+## About This Repo (TravelConnect)
+
+This repo is a prototype built with **TravelConnect** to demonstrate how onchain access can enhance real-world ecosystems. We use the **Base** blockchain and the **thirdweb SDK** to provide **Smart Accounts** for users, then apply onchain rules to unlock perks and experiences.
+
+### What it proves
+
+- **NFT coupons** can gate access to perks (claimable benefits, eligibility, and access control).
+- **Tokens** can represent loyalty points / reward points that accumulate through participation.
+- Smart Accounts can make onboarding smoother while keeping access rules enforceable onchain.
+
+### Context & story
+
+TravelConnect builds a travel ecosystem to improve efficiency and expand the value of travel companies across Asia, with a network of offices and teams collaborating to create new products for the industry.
+
+We built this app as a proof-of-concept—developed together with TravelConnect leadership (including CEO **Yuku NG**)—to validate the Web3 mechanism before deeper integration. A future phase can connect the gating logic to TravelConnect’s user database so only registered users can access specific perks and content.
+
+### Technology
+
+- Next.js (App Router) + React + TypeScript
+- Tailwind CSS
+- thirdweb SDK (Smart Accounts + EVM wallet/contract integrations)
+- Base blockchain (EVM-compatible)
+- Vercel deployment
 
 ## 📜 Licenses
 
@@ -85,52 +76,6 @@ Manifestos are available in:
 - 🇭🇰 [Cantonese – Hong Kong](./manifestos/manifesto_yue-Hant-HK.md)
 - 🇲🇾 [Bahasa Malaysia](./manifestos/manifesto_ms-MY.md)
 - 🇦🇪 [العربية – الإمارات](./manifestos/manifesto_ar-AE.md)
-
----
-
-## 📜 General Information
-
-**PABRIK ROTI: Programmed Bread Factory for Web3 Distribution**  
-_Developed and maintained by [Prof. NOTA Inc.](https://nota.endhonesa.com)_
-
----
-
-### 🏗️ What is PABRIKROTI?
-
-**PABRIKROTI** is a white label, multi-tenant, Web3-enabled application designed to create, display, and distribute tokenized digital assets—referred to as **Programmed Bread**. It supports NFTs (ERC-721/ERC-1155) and fungible tokens (ERC-20), integrating dynamic tenant configurations, visual claim interfaces, and cultural licensing through a fully modular and customizable framework.
-
-PABRIKROTI operates as a **decentralized digital production space**, where each domain/subdomain (e.g., `pabrikroti.endhonesa.com`) loads unique configurations for its respective brand, campaign, or cultural project, while still using the same underlying platform.
-
----
-
-### ✨ Key Features
-
-- **Dynamic Tenant-Based Theming**  
-  Auto-detects hostname, which is domain/subdomain and applies custom config from `/src/config/receipts/`.
-
-- **NFT Explorer & Claim Interface**  
-  Pages like `/free`, `/paid`, `/token/[idNFT]` list and handle claiming of tokenized assets with eligibility logic, fallback visuals, and blockchain status integration.
-
-- **ERC-20 Token Claim Pages**  
-  Pages like `/coins`, `/address/[coinAddress]` enable users to claim community or utility tokens with live metadata, eligibility checks, and claim buttons.
-
-- **Flexible Front Page (Multi-Mode)**  
-  Depending on the domain/subdomain, the home page renders:
-
-  - **Mode `abc`**: Login gateway with featured tokens
-  - **Mode `aiueo`**: Landing page for branding & storytelling
-
-- **Web3-Ready & Mobile Optimized**  
-  Built with:
-
-- Next.js 16 + App Router
-- React 19 + Server Components
-- Tailwind CSS v4
-- ThirdWeb SDK v5
-- Prof. NOTA Inc. Protocol
-
-- **Ethical Licensing & Multilingual Manifestos**  
-  Supports 6+ languages for license agreements and project manifestos. Access is granted only with permission from [Prof. NOTA & Prof. NOTA Inc.](https://nota.endhonesa.com/) or certified facilitators.
 
 ---
 
@@ -232,3 +177,30 @@ If you have questions, feel free to open an issue or reach out via the Prof. NOT
 For feedback, questions, or cultural-technical collaboration, join Prof. NOTA discord at [https://discord.gg/5KrsT6MbFm](https://discord.gg/5KrsT6MbFm).
 
 ---
+
+---
+
+## Maintenance by Prof. NOTA Evergreen Standard
+
+This repo is intended to stay evergreen while remaining production-safe.
+
+### Current Baseline (Jan 2026)
+
+- Runtime: Node **24.x** (Vercel-compatible; see `.nvmrc` and `package.json#engines`)
+- Package manager: Yarn **4.12.0** (lockfile: `yarn.lock`)
+- Types: `@types/node` **24.10.7** (pinned to match Node 24; 25.x intentionally deferred)
+- Key packages: Next.js **16.1.4**, React **19.2.3**, thirdweb **5.118.0**, framer-motion **12.29.0**
+- Deploy target: **Vercel auto-deploy from `main`**
+
+### Monthly Evergreen Cycle (safe)
+
+- `yarn install`
+- `yarn up -R "*"`
+- `yarn npm audit --severity moderate`
+- `yarn lint`
+- `yarn build`
+
+### Quarterly Evergreen Cycle (major review)
+
+- Review majors one at a time (framework/tooling), with a dedicated PR.
+- If `@types/node` gets bumped, repin to **24.10.7**, then re-run audit/lint/build.
